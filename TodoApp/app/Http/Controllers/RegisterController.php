@@ -11,6 +11,7 @@ class RegisterController extends Controller
     {
         $data = $request->only(['email', 'name', 'password']);
         $data['password'] = bcrypt($data['password']);
+        
         return User::create($data);
     }
 }
