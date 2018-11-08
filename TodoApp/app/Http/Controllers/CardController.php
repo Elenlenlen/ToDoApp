@@ -11,7 +11,6 @@ class CardController extends Controller
 {
     function create(CardRequest $request)
     {
-
         return Card::create([
             'description' => $request->input('description'),
             'done' => $request->input('done'),
