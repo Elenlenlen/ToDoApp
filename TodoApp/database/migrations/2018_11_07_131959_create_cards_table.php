@@ -23,6 +23,7 @@ class CreateCardsTable extends Migration
             $table->boolean('priority');
             $table->boolean('done');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

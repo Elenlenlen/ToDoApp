@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Http\Requests\CardRequest;
+use App\Http\Requests\CardUpdateRequest;
 
 class CardController extends Controller
 {
-    function create(CardRequest $request){
+    function create(CardRequest $request)
+    {
 
         return Card::create([
             'description' => $request->input('description'),
@@ -18,8 +20,8 @@ class CardController extends Controller
         ]);
     }
 
-    function all(){
-
+    function all()
+    {
         return Card::all();
     }
 
@@ -30,15 +32,15 @@ class CardController extends Controller
         return $card;
     }
 
-    public function update(CardRequest $request, Card $card)
+    public function update(CardUpdateRequest $request, Card $card)
     {
         $card->update($request->all());
 
         return $card;
     }
 
-    public function one(Request $request, Card $card){
-
+    public function one(Request $request, Card $card)
+    {
         return $card;
     }
 }
